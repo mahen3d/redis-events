@@ -70,10 +70,7 @@ proto.subscriber = null;
  */
 proto.createClient = function() {
 	debug('Creating redis client');
-	var client = redis.createClient(this.options.port, this.options.host);
-	if (this.options.auth) {
-		client.auth(this.options.auth);
-	}
+	var client = redis.createClient(this.options.port, this.options.host, this.options.password);
 	return client;
 };
 
